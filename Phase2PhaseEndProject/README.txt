@@ -14,8 +14,8 @@ Navigating the screens:
 		User can enter username and password here or select a hyperlink for creating a new account
 		Submit button possiblities:
 			Regardless of input, if there are no users, the user is notified and given a hyperlink to creating an account	(MenuNoUsers.png)
-			If username isn't found, user is notified																		(MenuInvalidUser.png)
-			If username is found but password isn't, user is notified of mismatch											(MenuInvalidPass.png)
+			If username isn't found, user is notified									(MenuInvalidUser.png)
+			If username is found but password isn't, user is notified of mismatch						(MenuInvalidPass.png)
 			If credentials are correct, user is redirected to landing.jsp
 	landing.jsp	(LandingDefault.png)
 		This page is accessed upon successful login
@@ -25,9 +25,9 @@ Navigating the screens:
 		User can click a hyperlink to return to the main menu
 		User can input a new username, password, and confirm the password
 		Submit button possibilities:
-			If any of the fields are empty, user is notified																(RegisterEmpty.png)
-			If the password confirmation does not match, the user is notified												(RegisterMismatch.png)
-			If the username matches one already in the database, the user is notified to create a unique name				(RegisterDuplicate.png)
+			If any of the fields are empty, user is notified								(RegisterEmpty.png)
+			If the password confirmation does not match, the user is notified						(RegisterMismatch.png)
+			If the username matches one already in the database, the user is notified to create a unique name		(RegisterDuplicate.png)
 			If none of the fields are empty and the passwords match, the user is notified of the success and given a hyperlink to return to the main menu to sign in (RegisterSuccess.png)
 
 Overview of data layer:
