@@ -1,0 +1,6 @@
+com\example\UserFeedback\controllers\FeedbackController.class
+com\example\UserFeedback\entities\Feedback.class
+com\example\UserFeedback\services\FeedbackService.class
+com\example\UserFeedback\UserFeedbackApplication.class
+com\example\UserFeedback\controllers\RestfulController.class
+com\example\UserFeedback\repositories\FeedbackRepository.class
