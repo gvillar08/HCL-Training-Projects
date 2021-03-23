@@ -1,5 +1,4 @@
 com\example\Authentication\services\UserService.class
-com\example\Authentication\entities\User.class
 com\example\Authentication\controllers\LoginController.class
 com\example\Authentication\repositories\UserRepository.class
 com\example\Authentication\AuthenticationApplication.class
