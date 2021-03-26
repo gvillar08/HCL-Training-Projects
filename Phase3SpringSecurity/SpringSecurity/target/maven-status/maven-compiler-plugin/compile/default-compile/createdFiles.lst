@@ -1,0 +1,5 @@
+com\example\SpringSecurity\controllers\MainController.class
+com\example\SpringSecurity\SpringSecurityApplication.class
+com\example\SpringSecurity\WebSecurityConfig.class
+com\example\SpringSecurity\config\SpringSecurityInitializer.class
+com\example\SpringSecurity\controllers\LoginController.class
