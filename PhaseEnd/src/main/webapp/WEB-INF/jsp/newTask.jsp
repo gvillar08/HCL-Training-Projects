@@ -8,10 +8,10 @@
 	    	<table>
 				<tr><th>Task Name:*</th><td><input type="text" name="name"></td></tr>				<!-- User can log in here -->
 				<tr><th>Description:</th><td><input type="text" name="desc"></td></tr>
-				<tr><th>Start Date:</th><td><input type="date" name="start"></td></tr>
-				<tr><th>End Date:</th><td><input type="date" name="end"></td></tr>
+				<tr><th>Start Date:*</th><td><input type="date" name="start"></td></tr>
+				<tr><th>End Date:*</th><td><input type="date" name="end"></td></tr>
 				<tr><th>Email:</th><td><input type="text" name="email"></td></tr>
-				<tr><th>Severity:</th><td><select id="severity" name="severity">
+				<tr><th>Severity:*</th><td><select id="severity" name="severity">
 					<option value="0">Select:</option>
 				    <option value="Low">Low</option>
 				    <option value="Medium">Medium</option>

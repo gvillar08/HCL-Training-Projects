@@ -1,6 +1,7 @@
 package com.example.PhaseEnd.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+//import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,8 @@ public class Task {
     private Integer id;
 	private String task;
 	private String desc;
-	private Date start;
-	private Date end;
+	private LocalDate start;
+	private LocalDate end;
 	private String email;
 	private String severity;
 	private Integer user_id;
@@ -40,16 +41,16 @@ public class Task {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public Date getStart() {
+	public LocalDate getStart() {
 		return start;
 	}
-	public void setStart(Date start) {
+	public void setStart(LocalDate start) {
 		this.start = start;
 	}
-	public Date getEnd() {
+	public LocalDate getEnd() {
 		return end;
 	}
-	public void setEnd(Date end) {
+	public void setEnd(LocalDate end) {
 		this.end = end;
 	}
 	public String getEmail() {

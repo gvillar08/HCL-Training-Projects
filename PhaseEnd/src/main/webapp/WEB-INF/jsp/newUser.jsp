@@ -3,6 +3,7 @@
 	<body>
 		<h1>Task Manager Assistant</h1>
 		<h2>Login</h2>
+		<a href="login">Return to Main Menu</a><br>
 	    <form method="post" action="login">
 	    	<table>
 				<tr><th>Username:</th><td><input type="text" name="username"></td></tr>				<!-- User can log in here -->

@@ -2,14 +2,18 @@ package com.example.PhaseEnd.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
+//import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import com.example.PhaseEnd.entities.Task;
+import com.example.PhaseEnd.entities.User;
 import com.example.PhaseEnd.repositories.TaskRepository;
 import com.example.PhaseEnd.repositories.UserRepository;
 
@@ -25,6 +29,20 @@ public class TaskService
 	
 	public Iterable<Task> GetAllTasks() {	//finds all feedback
 		return tr.findAll();
+	}
+	
+	public void createNewTask(String name, String desc, LocalDate start, LocalDate end, String email, String severity)
+	{
+		Task task = new Task();
+		task.setTask(name);
+		task.setDesc(desc);
+		task.setStart(start);
+		task.setEnd(end);
+		task.setEmail(email);
+		task.setSeverity(severity);
+		task.setUser_id(ur.findByUser(lts.getUsername()).getId());
+		//System.out.println(task.getTask()+task.getDesc()+task.getStart()+task.getEnd()+task.getEmail()+task.getSeverity()+task.getUser_id());
+		tr.save(task);
 	}
 	
 	public void deleteTask(Integer row)
