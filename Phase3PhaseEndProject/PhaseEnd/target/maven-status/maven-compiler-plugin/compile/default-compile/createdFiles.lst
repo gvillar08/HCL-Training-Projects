@@ -1,0 +1,13 @@
+com\example\PhaseEnd\controllers\LoginController.class
+com\example\PhaseEnd\entities\User.class
+com\example\PhaseEnd\services\UserService.class
+com\example\PhaseEnd\services\LoginTrackingService.class
+com\example\PhaseEnd\services\TaskService.class
+com\example\PhaseEnd\controllers\TaskListController.class
+com\example\PhaseEnd\repositories\UserRepository.class
+com\example\PhaseEnd\PhaseEndApplication.class
+com\example\PhaseEnd\controllers\EditTaskController.class
+com\example\PhaseEnd\controllers\NewTaskController.class
+com\example\PhaseEnd\controllers\NewUserController.class
+com\example\PhaseEnd\entities\Task.class
+com\example\PhaseEnd\repositories\TaskRepository.class

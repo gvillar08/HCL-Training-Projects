@@ -1,0 +1,67 @@
+package com.example.PhaseEnd.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.example.PhaseEnd.services.LoginTrackingService;
+import com.example.PhaseEnd.services.TaskService;
+
+@Controller
+public class EditTaskController						//controller for handling features on editTask.jsp
+{
+	@Autowired
+	private TaskService ts;
+	@Autowired
+	private LoginTrackingService lts;
+		
+    @GetMapping("/editTask")
+    public String Default(ModelMap model)
+    {
+    	if(lts.isUserLoggedIn()==false)				//if the user isn't logged in, reroute them to the login screen...
+    		return "login";
+    	model.addAttribute("form", ts.populateForm());	//...otherwise, populate the form with the user's details and print it
+    	return "editTask";
+    }
+    
+	@PostMapping("/editTask")						//validate the user's entry before saving it
+	public String newTask(ModelMap model, @RequestParam String name, @RequestParam String desc, @RequestParam String start, @RequestParam String end, @RequestParam String email, @RequestParam String severity)
+	{
+		if(name.isBlank()||start.isBlank()||end.isBlank()||severity.equals("0"))
+		{
+	    	model.addAttribute("form", ts.populateForm());
+			model.addAttribute("errorMessage", "Oops! Fields marked with * cannot be empty");
+			return "newTask";
+		}
+		LocalDate s = LocalDate.parse(start, DateTimeFormatter.ofPattern( "yyyy-MM-dd", Locale.ENGLISH ));
+		LocalDate e = LocalDate.parse(end, DateTimeFormatter.ofPattern( "yyyy-MM-dd", Locale.ENGLISH ));
+		
+		if(s==null||e==null)
+		{
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Oops! Please ensure all date fields are correct!");
+			return "newTask";
+		}
+		if(s.isAfter(e))
+		{
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Oops! Your start date is after the end date!");
+			return "newTask";
+		}
+		if(name.length()>255||desc.length()>255||email.length()>255)
+		{
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Sorry, the task name, description, and email may only be 255 characters maximum each");
+			return "newTask";
+		}
+		ts.editTask(name, desc, s, e, email, severity);	//if no errors were thrown, save the changes and reprint the form so it doesn't disappear
+    	model.addAttribute("form", ts.populateForm());
+    	model.addAttribute("successMessage", "Task successfully edited! Return to Tasks to view it!");
+		return "editTask";
+	}
+}
