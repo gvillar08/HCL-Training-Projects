@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 //import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.PhaseEnd.repositories.TaskRepository;
@@ -23,7 +24,7 @@ import com.example.PhaseEnd.services.LoginTrackingService;
 import com.example.PhaseEnd.services.TaskService;
 
 @Controller
-public class NewTaskController
+public class EditTaskController
 {
 	@Autowired
 	private TaskRepository tr;
@@ -31,22 +32,23 @@ public class NewTaskController
 	private TaskService ts;
 	@Autowired
 	private LoginTrackingService lts;
-	
-    @GetMapping("/newTask")
+		
+    @GetMapping("/editTask")
     public String Default(ModelMap model)
     {
     	if(lts.isUserLoggedIn()==false)
     		return "login";
-    	//model.addAttribute("tasks", ts.printTasks());
-    	return "newTask";
+    	model.addAttribute("form", ts.populateForm());
+    	return "editTask";
     }
-	
-	@PostMapping("/newTask")
+    
+	@PostMapping("/editTask")
 	public String newTask(ModelMap model, @RequestParam String name, @RequestParam String desc, @RequestParam String start, @RequestParam String end, @RequestParam String email, @RequestParam String severity)
 	{
 //		System.out.println(start);
 		if(name.isBlank()||start.isBlank()||end.isBlank()||severity.equals("0"))
 		{
+	    	model.addAttribute("form", ts.populateForm());
 			model.addAttribute("errorMessage", "Oops! Fields marked with * cannot be empty");
 			return "newTask";
 		}
@@ -55,21 +57,25 @@ public class NewTaskController
 		
 		if(s==null||e==null)
 		{
-			model.addAttribute("errorMessage", "Oops! Please ensure all date fields are correct!");
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Oops! Please ensure all date fields are correct!");
 			return "newTask";
 		}
 		if(s.isAfter(e))//.toString().isBlank())		//if one of these is blank, we don't check for this attribute
 		{
-			model.addAttribute("errorMessage", "Oops! Your start date is after the end date!");
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Oops! Your start date is after the end date!");
 			return "newTask";
 		}
 		if(name.length()>255||desc.length()>255||email.length()>255)
 		{
-			model.addAttribute("errorMessage", "Sorry, the task name, description, and email may only be 255 characters maximum each");
+	    	model.addAttribute("form", ts.populateForm());
+	    	model.addAttribute("errorMessage", "Sorry, the task name, description, and email may only be 255 characters maximum each");
 			return "newTask";
 		}
-		ts.createNewTask(name, desc, s, e, email, severity);
-		model.addAttribute("successMessage", "Task successfully created! Return to Tasks to view it!");
-		return "newTask";
+		ts.editTask(name, desc, s, e, email, severity);
+    	model.addAttribute("form", ts.populateForm());
+    	model.addAttribute("successMessage", "Task successfully edited! Return to Tasks to view it!");
+		return "editTask";
 	}
 }

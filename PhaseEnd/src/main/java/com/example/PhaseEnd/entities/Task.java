@@ -1,6 +1,7 @@
 package com.example.PhaseEnd.entities;
 
 import java.time.LocalDate;
+import javax.persistence.Column;
 //import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,12 +16,20 @@ public class Task {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
+	
+	@Column(name="\"task\"")
 	private String task;
+	@Column(name="\"desc\"")
 	private String desc;
-	private LocalDate start;
-	private LocalDate end;
+	@Column(name="\"start\"")
+	private String start;
+	@Column(name="\"end\"")
+	private String end;
+	@Column(name="\"email\"")
 	private String email;
+	@Column(name="\"severity\"")
 	private String severity;
+	@Column(name="\"user_id\"")
 	private Integer user_id;
 	
 	public Integer getId() {
@@ -41,16 +50,16 @@ public class Task {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public LocalDate getStart() {
+	public String getStart() {
 		return start;
 	}
-	public void setStart(LocalDate start) {
+	public void setStart(String start) {
 		this.start = start;
 	}
-	public LocalDate getEnd() {
+	public String getEnd() {
 		return end;
 	}
-	public void setEnd(LocalDate end) {
+	public void setEnd(String end) {
 		this.end = end;
 	}
 	public String getEmail() {

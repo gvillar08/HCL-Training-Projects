@@ -10,7 +10,6 @@
 				<tr><td><input type="submit" value="Submit"></td><td><a href="/newUser">New User?</a></td></tr><br>
 			</table>
 			<div style="color: #FF0000;">${errorMessage}</div><br>		<!-- Error messages go here -->
-        	<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> -->
 		</form>
 	</body>
 	</font>

@@ -50,8 +50,10 @@ public class TaskListController
     @PostMapping("/edit={row}")
     public String edit(ModelMap model, @PathVariable("row") Integer row)
     {
-    	model.addAttribute("tasks", ts.printTasks());
-    	return "taskList";
+    	//model.addAttribute("tasks", ts.printTasks());
+    	ts.setCurrRow(row);
+    	model.addAttribute("form", ts.populateForm());
+    	return "editTask";
     }
     
     @PostMapping("/delete={row}")
