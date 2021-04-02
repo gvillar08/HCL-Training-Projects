@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="Graphics/Logo.png">
+    <title>Ming's Diner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="mt-5 pt-5">
+
+    <!-- Nav Bar -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #aa1111">
+        <a class="navbar-brand" href="landing.html">
+          <img src="Graphics/Logo.png" width="150" height="70">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <a class="nav-item active nav-link" href="menu.html">Menu</a>
+            <a class="nav-item active nav-link" href="locations.html">Locations</a>
+            <a class="nav-item active nav-link" href="story.html">Our Story</a>
+          </ul>
+          <a class="btn btn-primary" href="menu.html" role="button">Order Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+
+      <!-- Menu Items -->
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-4">
+            <h4>Appetizers</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p>Egg roll</p>
+          </div>
+          <div class="col-4">
+            <p>$2.50</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Edamame</p>
+          </div>
+          <div class="col-4">
+            <p>$4.00</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Shrimp Tempura</p>
+          </div>
+          <div class="col-4">
+            <p>$5.50</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <h4>Entrees</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p>Teriyaki Chicken</p>
+          </div>
+          <div class="col-4">
+            <p>$10.00</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Chow Mein</p>
+          </div>
+          <div class="col-4">
+            <p>$8.50</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Hamburger</p>
+          </div>
+          <div class="col-4">
+            <p>$27.00</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <h4>Drinks</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p>Sake</p>
+          </div>
+          <div class="col-4">
+            <p>$1.00</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Orange Juice</p>
+          </div>
+          <div class="col-4">
+            <p>$2.50</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Red Slurpee</p>
+          </div>
+          <div class="col-4">
+            <p>$4.20</p>
+          </div>
+          <div class="col-4">
+            <div class="number-input md-number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-danger btn-number">-</button>
+                <input class="quantity" min="0" name="quantity" type="number" style='width: 5vh;'>
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-success btn-number">+</button>
+            </div>
+          </div>
+        </div>
+
+        <p><a class="btn btn-lg btn-success" href="orderSuccess.html" role="button">Place Order</a></p>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer" style='position: fixed;
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    background-color: #aa1111;
+                                    color: white;
+                                    text-align: center;'>
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2021 Ming's Diner &middot; <a href="contact.html">Contact Us</a></p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
