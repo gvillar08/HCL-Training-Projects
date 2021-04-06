@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="Graphics/Logo.png">
+    <title>Ming's Diner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JS for tables -->
+    <script src="financialsTable.js"></script>
+  </head>
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #aa1111;">
+        <a class="navbar-brand">
+          <img src="Graphics/Logo.png" style='width: 10vh; object-fit: contain'>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto"></ul>
+          <a class="btn btn-primary" href="vendors.html" role="button">Go to Product Manager View</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main" style='margin: 11vh;'>
+      <style>
+        table, th, td 
+        {
+          border: solid 1px #DDD;
+          border-collapse: collapse;
+          padding: 1vh;
+          text-align: center;
+        }
+      </style>
+
+      <h3>Cost Breakdown</h3>
+      <body onload="FinanceTable()">
+        <p id="showFinance"></p>
+        <p id="editData"></p>
+        <H3>Add New Item</H3>
+          <table>
+            <tr><td><label>Quantity</label></td><td><input type="number" id="quantityInput"><br></td></tr>
+            <tr><td><label>Item Name</label></td><td><input type="text" id="itemInput"><br></td></tr>
+            <tr><td><label>Unit of Measure</label></td><td><input type="text" id="unitsInput"><br></td></tr>
+            <tr><td><label>Unit Cost</label></td><td><input type="number" id="costInput"><br></td></tr>
+          </table>
+        <a class="btn btn-success" onclick="NewItem()" role="button">Submit</a>
+      </body>
+
+      <!-- FOOTER -->
+      <footer class="footer" style='position: fixed;
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    background-color: #aa1111;
+                                    color: white;
+                                    text-align: center;'>
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2021 Ming's Diner</p>
+      </footer>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
